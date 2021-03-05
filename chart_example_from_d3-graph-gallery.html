@@ -40,7 +40,9 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("dataorig.csv", function(data) {
+    d3.csv("https://raw.githubusercontent.com/martcoder/HealthMonitor/master/dataorig.csv",
+//d3.csv("https://raw.githubusercontent.com/martcoder/HealthMonitor/master/data.csv", 
+    function(data) {
 
   // Add X axis
   var x = d3.scaleLinear()
@@ -84,7 +86,7 @@ d3.csv("dataorig.csv", function(data) {
       .duration(200)
     tooltip
       .style("opacity", 1)
-      .html("Country: " + d.country)
+      .html("Date: " + d.date)
       .style("left", (d3.mouse(this)[0]+30) + "px")
       .style("top", (d3.mouse(this)[1]+30) + "px")
   }
